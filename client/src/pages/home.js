@@ -16,7 +16,7 @@ class Home extends Component{
               <Link
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-                to="/" >
+                to="/saved" >
                 sign-up
               </Link> 
               <Link
