@@ -14,7 +14,7 @@ class Nav extends Component {
   updateWidth = () => {
     const newState = { width: window.innerWidth };
 
-    if (this.state.open && newState.width > 991) {
+    if (this.state.open && newState.width > 400) {
       newState.open = false;
     }
 
@@ -61,7 +61,7 @@ class Nav extends Component {
               <Link
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-                to="/"
+                to="/search"
               >
                 Search
               </Link>
