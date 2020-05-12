@@ -10,6 +10,9 @@ router.route("/")
 router
   .route("/:id")
   .get(userController.findById)
-  .post(userController.update)
+
+router.route("/:id/restaurant")
+  .get(userController.getUserRestaurants)
+  .post(userController.newUserRestaurant)
 
 module.exports = router; 

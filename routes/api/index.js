@@ -7,8 +7,9 @@ const restRoutes = require("./restaurant");
 router.use("/", userRoutes);
 
 // restaurant routes
-router.use("/restaurant", restRoutes);
+// router.use("/:id/restaurant", restRoutes);
 
+router.use("/restaurant", restRoutes)
 // note Routes
 // router.use("/note", noteRoutes);
 
