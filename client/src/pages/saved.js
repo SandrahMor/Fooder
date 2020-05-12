@@ -1,34 +1,34 @@
 import React, { Component } from "react";
 import Card from "../components/SaveCard";
-// import Book from "../components/Book";
+import Restaurant from "../components/Restaurant";
 import Footer from "../components/Footer";
-// import API from "../utils/API";
+ import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { Link } from "react-router-dom";
 import { List } from "../components/List";
 
 class Saved extends Component {
-    // state = {
-    //   restaurants: []
-    // };
+    state = {
+      restaurants: []
+    };
   
-    // componentDidMount() {
-    //   this.getSavedRestaurants();
-    // }
+    componentDidMount() {
+      this.getSavedRestaurants();
+    }
   
-    // getSavedRestaurants = () => {
-    //   API.getSavedRestaurants()
-    //     .then(res =>
-    //       this.setState({
-    //         restaurants: res.data
-    //       })
-    //     )
-    //     .catch(err => console.log(err));
-    // };
+    getSavedRestaurants = () => {
+      API.getSavedRestaurants()
+        .then(res =>
+          this.setState({
+            restaurants: res.data
+          })
+        )
+        .catch(err => console.log(err));
+    };
   
-    // handleRestaurantDelete = id => {
-    //   API.deleteRestaurant(id).then(res => this.getSavedRestaurants());
-    // };
+    handleRestaurantDelete = id => {
+      API.deleteRestaurant(id).then(res => this.getSavedRestaurants());
+    };
   
     render() {
       return (
@@ -45,7 +45,7 @@ class Saved extends Component {
                 {this.state.restaurants.length ? (
                   <List>
                     {this.state.restaurants.map(restaurants => (
-                      <restaurants
+                      <Restaurant
                         key={restaurants._id}
                         title={restaurants.title}
                         openNow={restaurants.open_now}
