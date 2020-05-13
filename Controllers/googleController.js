@@ -16,7 +16,7 @@ module.exports = {
           )
         )
         .then(apiRestaurants =>{
-          console.log(apiRestaurants);
+          console.log(apiRestaurants)
           db.Restaurant.find().then(dbRestaurants =>
             apiRestaurants.filter(apiRestaurant =>
               dbRestaurants.every(dbRestaurant => dbRestaurant.googleId.toString() !== apiRestaurant.id)
