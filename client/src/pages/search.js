@@ -40,20 +40,20 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.getrestaurants();
+    this.getRestaurants();
   };
 
-  handleRestaurantSave = id => {
-    const restaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
+  // handleRestaurantSave = id => {
+  //   const restaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
 
-    API.saveRestaurant({
-      // googleId: restaurant.id,
-      // title: result.name,
-      // openNow: result.opening_hours.open_now,
-      // image: result.photos
-    }).then(() => this.getRestaurants());
-  };
-  // The render method returns the JSX that should be rendered
+  //   API.saveRestaurant({
+  //     // googleId: restaurant.id,
+  //     // title: result.name,
+  //     // openNow: result.opening_hours.open_now,
+  //     // image: result.photos
+  //   }).then(() => this.getRestaurants());
+  // };
+  // // The render method returns the JSX that should be rendered
   render() {
     return (
       <Container>
