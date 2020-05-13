@@ -112,7 +112,89 @@ export default Search;
 
 
 
+// class Search extends Component {
+//   state = {
+//     image: "",
+//     match: false,
+//     matchCount: 0
+//   };
 
+//   // When the component mounts, load the next dog to be displayed
+//   componentDidMount() {
+//     this.loadNextRestaurant();
+//   }
+
+//   handleBtnClick = event => {
+//     // Get the data-value of the clicked button
+//     const btnType = event.target.attributes.getNamedItem("data-value").value;
+//     // Clone this.state to the newState object
+//     // We'll modify this object and use it to set our component's state
+//     const newState = { ...this.state };
+
+//     if (btnType === "pick") {
+//       // Set newState.match to either true or false depending on whether or not the dog likes us (1/5 chance)
+//       newState.match = 1 === Math.floor(Math.random() * 5) + 1;
+
+//       // Set newState.matchCount equal to its current value or its current value + 1 depending on whether the dog likes us
+//       newState.matchCount = newState.match
+//         ? newState.matchCount + 1
+//         : newState.matchCount;
+//     } else {
+//       // If we thumbs down'ed the dog, we haven't matched with it
+//       newState.match = false;
+//     }
+//     // Replace our component's state with newState, load the next dog image
+//     this.setState(newState);
+//     this.loadNextRestaurant();
+//   };
+
+//   loadNextRestaurant = () => {
+//     API.getRestaurants()
+//       .then(res =>
+//         this.setState({
+//           image: results.photos
+//         })
+//       )
+//       .catch(err => console.log(err));
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         <h3 className="text-center">
+//           Pick the photo of the place you'd like to eat at. 
+//         </h3>
+//         <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
+//       </div>
+//     );
+//   }
+// }
+
+// export default Search;
+
+
+// class Search extends Component {
+//   state = {
+//     restaurant: null
+//   };
+
+//   async componentDidMount() {
+//     const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBVbcko5gMzL50MmzOJnfAk86hsIJVvu6A&location=45.086140,-93.258360&radius=24000&type=restaurant";
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     this.setState({ restaurant: data.results[0]});
+//   }
+ 
+//   render() {
+//     return (
+//       <div>
+//         <div>{this.state.restaurant.name}</div>
+//         <div>{this.state.restaurant.opening_hours.open_now}</div>
+//         <img src={this.state.restaurant.photos} alt = ""/>
+//       </div>
+//     );
+//   }
+// }
 
 
 

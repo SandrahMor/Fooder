@@ -5,7 +5,7 @@ const db = require("../models");
 module.exports = {
     findAll: function(req, res) {
       axios
-        .get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBVbcko5gMzL50MmzOJnfAk86hsIJVvu6A&location=45.086140,-93.258360&radius=24000&type=restaurants") 
+        .get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBVbcko5gMzL50MmzOJnfAk86hsIJVvu6A&location=45.086140,-93.258360&radius=24000&type=restaurant") 
         .then(results =>
           results.data.items.filter(
             result =>
