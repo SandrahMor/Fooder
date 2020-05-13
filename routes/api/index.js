@@ -5,7 +5,7 @@ const restRoutes = require("./restaurant");
 const googleRoutes = require("./google");
 
 // user routes
-router.use("/", userRoutes);
+router.use("/user", userRoutes);
 
 // restaurant routes
 // router.use("/:id/restaurant", restRoutes);

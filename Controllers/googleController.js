@@ -5,12 +5,13 @@ const axios = require("axios");
 module.exports = {
     findAll: function(req, res) {
       // const { query: params } = req;
-    
+      console.log('GOOGLE FINDALL')
       axios
         .get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBVbcko5gMzL50MmzOJnfAk86hsIJVvu6A&location=45.086140,-93.258360&radius=24000&type=restaurant") 
-        console.log(res)
-        .then(res => (res.json))   
-             
+        .then(({data}) => {
+          console.log(data.results)
+          res.json(data.results)
+        })     
         .catch(err => res.status(422).json(err));
     }
   }
