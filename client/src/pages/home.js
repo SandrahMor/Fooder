@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/WelcomJumbotron";
 import { Link } from "react-router-dom";
-// import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 
 class Home extends Component{
   render() {
@@ -13,18 +13,22 @@ class Home extends Component{
           <Jumbotron>
             <h1 className="text-center">Welcome to Fooder</h1>
             <p>
-              <Link
+              <Button variant="primary" type="submit">
+                <Link
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-                to="/saved" >
-                sign-up
+                to="/signup" >
               </Link> 
-              <Link
+                    Sign In
+              </Button>
+              <Button variant="primary" type="submit">
+                <Link
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-                  to="/" >
-                log-in
+                  to="/signin" >
               </Link> 
+                    Log In
+              </Button>
             </p>
           </Jumbotron>         
         </Col>
