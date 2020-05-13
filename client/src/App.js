@@ -5,20 +5,26 @@ import Saved from "./pages/saved";
 import Search from "./pages/search"
 
 import Nav from "./components/Nav";
+import SignIn from "./components/Sign-in";
 
+import { AuthProvider } from "./Auth";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <div>
        <Nav />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/saved" component={Saved} />          
           <Route exact path="/search" component={Search} />
         </Switch>
       </div>
     </Router>
+    </AuthProvider>
+    
   );
 }
 
