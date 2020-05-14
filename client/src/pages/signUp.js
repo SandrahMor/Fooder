@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Jumbotron from '../components/WelcomJumbotron';
+import { Link } from "react-router-dom";
+
 
 class SignUp extends Component{
     render() {
@@ -28,6 +30,11 @@ class SignUp extends Component{
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
+                <Link
+                  onClick={this.toggleNav}
+                  className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
+                  to="/search" >
+                </Link> 
                     Submit
                 </Button>
             </Form>  
