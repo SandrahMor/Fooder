@@ -9,7 +9,12 @@ module.exports = {
       axios
         .get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBVbcko5gMzL50MmzOJnfAk86hsIJVvu6A&location=45.086140,-93.258360&radius=24000&type=restaurant") 
         .then(({data}) => {
-          console.log(data.results)
+          console.log(
+          data.results.items.filter(
+            result =>
+              result.name &&
+              result.opening_hours.open_now
+          ))
           res.json(data.results)
         })     
         .catch(err => res.status(422).json(err));
