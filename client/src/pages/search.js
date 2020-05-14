@@ -15,12 +15,12 @@ class Search extends Component {
     message: "Search To Begin!"
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
   getRestaurants = () => {
     API.getRestaurants(this.state.q)
@@ -61,7 +61,7 @@ class Search extends Component {
           <Col size="md-12">
             <Card title="restaurant Search" icon="far fa-restaurant">
               <Form
-                handleInputChange={this.handleInputChange}
+                // handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 q={this.state.q}
               />
