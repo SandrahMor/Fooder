@@ -3,21 +3,24 @@ import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 import "./style.css";
 
-function Restaurant({ title, openNow, rating, link, Button }) {
+function Restaurant({ title, openNow, rating, Button }) {
   return (
     <ListItem>
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
           <h3 className="font-italic">{title}</h3>
         </Col>
-        <Col size="md-4">
+        <Col size="md-2">
             <h3 className="font-italic">{rating}</h3>
+        </Col>
+        <Col size="md-2">
+            <Button />
         </Col>
       </Row>
       <Row>
-        <Col size="md-6">
+        {/* <Col size="md-6">
           <p className="font-italic">{openNow}</p>
-        </Col>
+        </Col> */}
       </Row>
       {/* <Row>
         <Col size="12 sm-4 md-2">
