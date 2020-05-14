@@ -35,12 +35,6 @@ class Saved extends Component {
         <Container>
           <Row>
             <Col size="md-12">
-            <Link
-                  onClick={this.toggleNav}
-                  className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-                  to="/" >
-                log-in
-              </Link> 
               <Card title="Saved Restaurants" icon="download">
                 {this.state.restaurants.length ? (
                   <List>

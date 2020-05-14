@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import { Col, Row, Container } from "../components/Grid";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Jumbotron from '../components/WelcomJumbotron';
 
-class SignUp extends Component{
+class SignIn extends Component{
     render() {
     return (
         <div>
@@ -22,21 +21,14 @@ class SignUp extends Component{
                     </Form.Group>
                 </Form.Row>
 
-                <Form.Group controlId="formGridAddress1">
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control placeholder="1234 Main St" />
-                </Form.Group>
-
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-            </Form>  
+                </Form>  
             </Jumbotron>
-            
-        </div>   
-        
+        </div>    
         );
     }
     }
 
-export default SignUp
+export default SignIn
