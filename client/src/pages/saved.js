@@ -4,7 +4,6 @@ import Restaurant from "../components/Restaurant";
 import Footer from "../components/Footer";
  import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-import { Link } from "react-router-dom";
 import { List } from "../components/List";
 
 class Saved extends Component {

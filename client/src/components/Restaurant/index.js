@@ -3,7 +3,7 @@ import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 import "./style.css";
 
-function Restaurant({ title, openNow,image, link, Button }) {
+function Restaurant({ title, openNow, rating, link, Button }) {
   return (
     <ListItem>
       <Row className="flex-wrap-reverse">
@@ -11,24 +11,19 @@ function Restaurant({ title, openNow,image, link, Button }) {
           <h3 className="font-italic">{title}</h3>
         </Col>
         <Col size="md-4">
-          <div className="btn-container">
-            <a className="btn btn-light" target="_blank" rel="noopener noreferrer" href={link}>
-              View
-            </a>
-            <Button />
-          </div>
+            <h3 className="font-italic">{rating}</h3>
         </Col>
       </Row>
       <Row>
         <Col size="md-6">
-          <p className="font-italic small">{openNow}</p>
+          <p className="font-italic">{openNow}</p>
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col size="12 sm-4 md-2">
           <img className="img-thumbnail img-fluid w-100" src={image} alt={title} />
         </Col>
-      </Row>
+      </Row> */}
     </ListItem>
   );
 }
