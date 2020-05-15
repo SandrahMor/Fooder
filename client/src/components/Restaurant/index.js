@@ -14,7 +14,7 @@ function Restaurant({ title, openNow, rating, Button }) {
             <h3 className="font-italic">{rating}</h3>
         </Col>
         <Col size="md-2">
-            <Button />
+            <Button variant="outline-success"/>
         </Col>
       </Row>
       <Row>

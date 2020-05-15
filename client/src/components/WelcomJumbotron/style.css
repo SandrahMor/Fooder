@@ -1,3 +1,6 @@
 .jumbotron {
     padding: 100px;
+    background-color: whitesmoke;
+    background-image: url("./ice_cream.png");
+   background-repeat: no-repeat;
   }

@@ -29,7 +29,7 @@ class SignUp extends Component{
                     <Form.Control placeholder="1234 Main St" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="outline-success" type="submit">
                 <Link
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}

@@ -15,7 +15,7 @@ class Search extends Component {
   };
 
   componentDidMount() {
-    // console.log("MOUNTED")
+    console.log("MOUNTED Search")
     API.getRestaurants()
     .then(res =>
       this.setState({
@@ -77,7 +77,7 @@ class Search extends Component {
                         Button={() => (
                         <button
                           onClick={() => this.handleRestaurantSave(restaurant.id)}
-                          className="btn btn-primary ml-2"
+                          className="btn  ml-2" variant="outline-success"
                         >
                           Save
                         </button>

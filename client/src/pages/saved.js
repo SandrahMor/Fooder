@@ -32,7 +32,7 @@ class Saved extends Component {
   
     render() {
       return (
-        <Container>
+        <Container >
           <Row>
             <Col size="md-12">
               <Card title="Saved Restaurants" icon="download">
@@ -46,7 +46,7 @@ class Saved extends Component {
                         Button={() => (
                           <button
                             onClick={() => this.handleRestaurantDelete(restaurant._id)}
-                            className="btn btn-danger ml-2"
+                            variant="outline-success"
                           >
                             Delete
                           </button>

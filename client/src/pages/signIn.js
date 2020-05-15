@@ -10,7 +10,7 @@ class SignIn extends Component{
     return (
         <div>
             <Jumbotron>
-                <Form>
+                <Form className="text-center ">
                 <Form.Row>
                     <Form.Group controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
@@ -23,7 +23,7 @@ class SignIn extends Component{
                     </Form.Group>
                 </Form.Row>
 
-                <Button variant="primary" type="submit">
+                <Button variant="outline-success" type="submit">
                 <Link
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}

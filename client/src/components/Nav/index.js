@@ -39,7 +39,7 @@ class Nav extends Component {
   // renders the content onto the screen
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2" >
         <Link className="navbar-brand" to="/">
          FOODR
         </Link>
@@ -79,8 +79,8 @@ class Nav extends Component {
         </div>
       </nav>
     );
-  }
+  };
 }
 
-// exports the nav components
 export default Nav;
+// exports the nav components

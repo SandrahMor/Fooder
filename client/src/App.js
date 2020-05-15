@@ -6,13 +6,14 @@ import Search from "./pages/search";
 import SignUp from "./pages/signUp";
 import SignIn from "./pages/signIn";
 import Nav from "./components/Nav";
+import Container from "./components/body"
 
 
 function App() {
   return (
     <Router>
-      <div>
-       <Nav />
+      <Container>
+         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={SignUp} />
@@ -20,7 +21,10 @@ function App() {
           <Route exact path="/saved" component={Saved} />          
           <Route exact path="/search" component={Search} />
         </Switch>
-      </div>
+      
+      </Container>
+      
+      
     </Router>
   );
 }
