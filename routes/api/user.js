@@ -10,9 +10,10 @@ router.route("/")
 router
   .route("/:id")
   .get(userController.findById)
+  .delete(userController.remove);
 
-router.route("/:id/restaurant")
-  .get(userController.getUserRestaurants)
-  .post(userController.newUserRestaurant)
+// router.route("/:id/restaurant")
+//   .get(userController.getUserRestaurants)
+//   .post(userController.newUserRestaurant)
 
 module.exports = router; 

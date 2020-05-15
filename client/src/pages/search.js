@@ -47,10 +47,10 @@ class Search extends Component {
 
   handleRestaurantSave = id => {
     const restaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
-    console.log(restaurant)
+    console.log("MYSEARCH", restaurant)
     API.saveRestaurant({
-      googleId: restaurant.id,
-      title: restaurant.name,
+      userId: restaurant.id,
+      name: restaurant.name,
       rating: restaurant.rating,
     })
     .then(() => this.getRestaurants());
