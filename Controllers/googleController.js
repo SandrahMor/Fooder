@@ -6,9 +6,7 @@ module.exports = {
     findAll: function(req, res) {
       console.log('GOOGLE FINDALL')
       axios
-        .get("https://maps.googleapis.com/maps/api/place/nearbysearch/"
-        +"json?key=AIzaSyBVbcko5gMzL50MmzOJnfAk86hsIJVvu6A"
-        +"&location=45.086140,-93.258360&radius=24000&type=restaurant") 
+        .get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBVbcko5gMzL50MmzOJnfAk86hsIJVvu6A&location=44.9765,-93.2761&radius=1000&type=restaurant	") 
         .then(({data}) => {
           // console.log(data);
           // data.items = data.items.map(

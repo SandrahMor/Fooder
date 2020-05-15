@@ -45,16 +45,16 @@ class Search extends Component {
     this.getRestaurants();
   };
 
-  // handleRestaurantSave = id => {
-  //   const restaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
-
-  //   API.saveRestaurant({
-  //     // googleId: restaurant.id,
-  //     // title: result.name,
-  //     // openNow: result.opening_hours.open_now,
-  //     // image: result.photos
-  //   }).then(() => this.getRestaurants());
-  // };
+  handleRestaurantSave = id => {
+    const restaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
+    console.log(restaurant)
+    API.saveRestaurant({
+      googleId: restaurant.id,
+      title: restaurant.name,
+      rating: restaurant.rating,
+    })
+    .then(() => this.getRestaurants());
+  }
 
 
   // // The render method returns the JSX that should be rendered
