@@ -7,12 +7,12 @@ export default {
   },
   // Gets all saved books
   getSavedRestaurants: function() {
-    return axios.get("/api/restaurants");
+    return axios.get("/api/user");
   },
   // Deletes the saved book with the given id
-//   deleteBook: function(id) {
-//     return axios.delete("/api/books/" + id);
-//   },
+  deleteRestaurant: function(id) {
+    return axios.delete("/api/user/" + id);
+  },
   // Saves an book to the database
   saveRestaurant: function(userData) {
     console.log("MYDATA", userData)

@@ -13,11 +13,11 @@ class Saved extends Component {
   
     componentDidMount() {
       console.log("MOUNTED")
-      this.getUserRestaurants();
+      this.getSavedRestaurants();
     }
   
-    getUserRestaurants = () => {
-      API.getUserRestaurants()
+    getSavedRestaurants = () => {
+      API.getSavedRestaurants()
         .then(res =>
           this.setState({
             restaurants: res.data
@@ -27,7 +27,7 @@ class Saved extends Component {
     };
   
     handleRestaurantDelete = id => {
-      API.deleteRestaurant(id).then(res => this.getUserRestaurants());
+      API.deleteRestaurant(id).then(res => this.getSavedRestaurants());
     };
   
     render() {
