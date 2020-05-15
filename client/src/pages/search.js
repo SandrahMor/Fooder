@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "../components/SaveCard";
-import Form from "../components/Form";
 import Restaurant from "../components/Restaurant";
 import Footer from "../components/Footer";
 import API from "../utils/API";
@@ -15,14 +14,8 @@ class Search extends Component {
     message: "Search To Begin!"
   };
 
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
   componentDidMount() {
+    // console.log("MOUNTED")
     API.getRestaurants()
     .then(res =>
       this.setState({
@@ -30,9 +23,6 @@ class Search extends Component {
       })
     )
   }
-
-
-
 
   getRestaurants = () => {
     API.getRestaurants(this.state.q)
@@ -55,33 +45,22 @@ class Search extends Component {
     this.getRestaurants();
   };
 
-  // handleRestaurantSave = id => {
-  //   const restaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
-
-  //   API.saveRestaurant({
-  //     // googleId: restaurant.id,
-  //     // title: result.name,
-  //     // openNow: result.opening_hours.open_now,
-  //     // image: result.photos
-  //   }).then(() => this.getRestaurants());
-  // };
+  handleRestaurantSave = id => {
+    const restaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
+    console.log("MYSEARCH", restaurant)
+    API.saveRestaurant({
+      userId: restaurant.id,
+      name: restaurant.name,
+      rating: restaurant.rating,
+    })
+    .then(() => this.getRestaurants());
+  }
 
 
   // // The render method returns the JSX that should be rendered
   render() {
     return (
       <Container>
-        <Row>
-          <Col size="md-12">
-            <Card title="restaurant Search" icon="far fa-restaurant">
-              <Form
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                q={this.state.q}
-              />
-            </Card>
-          </Col>
-        </Row>
         <Row>
             {/* card to ask for selection foom user */}
         </Row>
@@ -95,8 +74,7 @@ class Search extends Component {
                         key={restaurant._id}
                         title={restaurant.name}
                         rating={restaurant.rating}
-                        
-                      Button={() => (
+                        Button={() => (
                         <button
                           onClick={() => this.handleRestaurantSave(restaurant.id)}
                           className="btn btn-primary ml-2"
@@ -118,7 +96,6 @@ class Search extends Component {
     );
   }
 }
-
 
 export default Search;
 
