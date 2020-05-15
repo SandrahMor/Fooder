@@ -12,11 +12,12 @@ class Saved extends Component {
     };
   
     componentDidMount() {
-      this.getSavedRestaurants();
+      console.log("MOUNTED")
+      this.getUserRestaurants();
     }
   
-    getSavedRestaurants = () => {
-      API.getSavedRestaurants()
+    getUserRestaurants = () => {
+      API.getUserRestaurants()
         .then(res =>
           this.setState({
             restaurants: res.data
@@ -26,7 +27,7 @@ class Saved extends Component {
     };
   
     handleRestaurantDelete = id => {
-      API.deleteRestaurant(id).then(res => this.getSavedRestaurants());
+      API.deleteRestaurant(id).then(res => this.getUserRestaurants());
     };
   
     render() {
@@ -37,16 +38,15 @@ class Saved extends Component {
               <Card title="Saved Restaurants" icon="download">
                 {this.state.restaurants.length ? (
                   <List>
-                    {this.state.restaurants.map(restaurants => (
+                    {this.state.restaurants.map(restaurant => (
                       <Restaurant
-                        key={restaurants._id}
-                        title={restaurants.title}
-                        openNow={restaurants.open_now}
-                        image={restaurants.image}
+                        key={restaurant._id}
+                        title={restaurant.name}
+                        rating={restaurant.rating}
                         Button={() => (
                           <button
-                            // onClick={() => this.handleRestaurantDelete(restaurant._id)}
-                            // className="btn btn-danger ml-2"
+                            onClick={() => this.handleRestaurantDelete(restaurant._id)}
+                            className="btn btn-danger ml-2"
                           >
                             Delete
                           </button>
