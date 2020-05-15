@@ -4,12 +4,7 @@ const ObjectId = mongoose.Types.ObjectId;
 
 const userSchema = new Schema({
   name: { type: String, required: true },
-  email: { type: String, required: true },
-  userID: { type: String, required: true },
-  restaurants:[{
-      type: Schema.Types.ObjectId,
-      ref: "Restaurant"
-  }],
+  rating: { type: String, required: true },
 });
 
 const User = mongoose.model("User", userSchema);
